@@ -1,5 +1,8 @@
 <!--
-  Site header.
-  Intentionally empty so the homepage opens calmly with the main content.
-  If we ever want a quiet site title back, put a small <header> here.
+  Site header: one quiet Home link on every page.
 -->
+<header class="site-header" aria-label="Site navigation">
+  <nav class="site-nav" aria-label="Primary">
+    <a class="home-link" href="{{ '/' | relative_url }}">Home</a>
+  </nav>
+</header>

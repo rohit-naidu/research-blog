@@ -121,6 +121,22 @@ body {
   gap: 0.85rem;
 }
 
+.home-link {
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.9rem;
+  text-decoration: none;
+}
+
+.home-link:hover,
+.home-link:focus {
+  background: var(--paper-shadow);
+}
+
 .site-footer {
   margin-top: 4rem;
   text-align: center;
