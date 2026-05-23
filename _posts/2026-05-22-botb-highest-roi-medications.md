@@ -10,10 +10,29 @@ GLP-1s do not usually fail because they are too weak.
 
 They fail because the patient gets stuck in one of four loops:
 
-**nausea loop:** delayed gastric emptying → food sits longer → nausea → under-eating → dehydration → worse nausea
-**constipation loop:** slower transit → hard stool → bloating → reflux → nausea → reduced intake → worse constipation
-**reflux loop:** gastric pressure → belching/GERD → meal avoidance → poor nutrition → fatigue
-**muscle-loss loop:** appetite suppression → low protein → low training → lean mass loss → lower function/metabolic resilience
+<div class="glp-loop-grid" role="list" aria-label="Four GLP-1 side-effect loops">
+
+<div class="glp-loop" role="listitem">
+<p class="glp-loop__title"><strong>Nausea loop</strong></p>
+<p class="glp-loop__chain">delayed gastric emptying → food sits longer → nausea → under-eating → dehydration → worse nausea</p>
+</div>
+
+<div class="glp-loop" role="listitem">
+<p class="glp-loop__title"><strong>Constipation loop</strong></p>
+<p class="glp-loop__chain">slower transit → hard stool → bloating → reflux → nausea → reduced intake → worse constipation</p>
+</div>
+
+<div class="glp-loop" role="listitem">
+<p class="glp-loop__title"><strong>Reflux loop</strong></p>
+<p class="glp-loop__chain">gastric pressure → belching/GERD → meal avoidance → poor nutrition → fatigue</p>
+</div>
+
+<div class="glp-loop" role="listitem">
+<p class="glp-loop__title"><strong>Muscle-loss loop</strong></p>
+<p class="glp-loop__chain">appetite suppression → low protein → low training → lean mass loss → lower function/metabolic resilience</p>
+</div>
+
+</div>
 
 The best medication stack is not about throwing drugs at every symptom.
 
