@@ -6,13 +6,11 @@ title: "Rohit Naidu"
 description: "Research notes on eliminating GLP side effects."
 author: "Rohit Naidu"
 
-# GitHub Pages project site: the site lives at
-# https://rohit-naidu.github.io/research-blog/
-# Jekyll uses url + baseurl so asset and page links resolve correctly.
-# For local dev, run: bundle exec jekyll serve --baseurl ""
-# (or temporarily comment baseurl out while testing locally).
-url: "https://rohit-naidu.github.io"
-baseurl: "/research-blog"
+# Live site uses the custom domain (GitHub Pages → sideeffect.me).
+# url + baseurl must match how the site is served at the domain root.
+# For local dev: bundle exec jekyll serve
+url: "https://sideeffect.me"
+baseurl: ""
 
 # Social profile links used by the homepage Connect section.
 # Replace the placeholder URLs with your real profiles when ready.
