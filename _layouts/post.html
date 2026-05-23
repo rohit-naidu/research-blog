@@ -9,6 +9,10 @@ layout: default
   HTML. This keeps every article visually consistent.
 -->
 <article class="post h-entry">
+  <nav class="post-nav" aria-label="Article navigation">
+    <a class="home-link" href="{{ '/' | relative_url }}">Home</a>
+  </nav>
+
   <header class="post-header">
     <h1 class="post-title p-name">{{ page.title }}</h1>
 
@@ -34,4 +38,8 @@ layout: default
   <div class="post-content e-content">
     {{ content }}
   </div>
+
+  <nav class="post-nav post-nav--end" aria-label="Article navigation">
+    <a class="home-link" href="{{ '/' | relative_url }}">Home</a>
+  </nav>
 </article>
