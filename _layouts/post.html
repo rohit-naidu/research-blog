@@ -1,0 +1,37 @@
+---
+# This layout itself uses the default layout.
+# That means posts get the same <head>, header, footer, and main container.
+layout: default
+---
+
+<!--
+  Jekyll inserts each Markdown post into this layout after converting it to
+  HTML. This keeps every article visually consistent.
+-->
+<article class="post h-entry">
+  <header class="post-header">
+    <h1 class="post-title p-name">{{ page.title }}</h1>
+
+    <!--
+      Article pages intentionally do not show posted dates.
+      The drug/system metadata helps readers understand where the empty article
+      belongs in the research catalog.
+    -->
+    <p class="post-meta">
+      {{ site.author }}
+      {% if page.drug %}
+        &middot; {{ page.drug }}
+      {% endif %}
+      {% if page.system %}
+        &middot; {{ page.system }}
+      {% endif %}
+    </p>
+  </header>
+
+  <hr>
+
+  <!-- The converted Markdown article body appears here. -->
+  <div class="post-content e-content">
+    {{ content }}
+  </div>
+</article>

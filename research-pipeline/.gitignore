@@ -1,0 +1,57 @@
+# Pipeline-specific gitignore. The top-level research-blog .gitignore covers
+# generic things like _site/ and vendor/; this file covers pipeline outputs
+# and secrets.
+
+# Secrets - never commit real API keys.
+.env
+
+# Python build artifacts.
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtualenvs.
+venv/
+.venv/
+env/
+
+# Pipeline outputs - these get regenerated on every run and contain potentially
+# sensitive raw research content (including patient quotes). Keep them local.
+botb/tier2/research/
+botb/tier2/dossiers/
+botb/tier2/drafts/
+botb/tier2/reviews/
+botb/tier2/final/
+botb/tier2/dry-run-published/
+botb/tier3/round2/
+botb/tier3/round3/
+botb/tier3/dossiers/
+botb/tier3/final/
+manual-review-queue/
+logs/
+state.sqlite
+state.sqlite-journal
+
+# Keep the directory structure (placeholders inside each).
+!botb/tier2/research/.gitkeep
+!botb/tier2/dossiers/.gitkeep
+!botb/tier2/drafts/.gitkeep
+!botb/tier2/reviews/.gitkeep
+!botb/tier2/final/.gitkeep
+!botb/tier3/round2/.gitkeep
+!botb/tier3/round3/.gitkeep
+!botb/tier3/dossiers/.gitkeep
+!botb/tier3/final/.gitkeep
+!manual-review-queue/.gitkeep
+!logs/.gitkeep
+
+# Voice exemplars are personal writing - keep them local.
+style/voice-exemplars/*
+!style/voice-exemplars/.gitkeep
+!style/voice-exemplars/README.md

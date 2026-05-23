@@ -1,0 +1,87 @@
+# Article schema: Highest ROI Medications.
+
+id: medications
+title: "Highest ROI Medications"
+target_word_count: 4500
+
+sections:
+  - id: tl_dr
+    heading: null
+    purpose: "Opening paragraph. The top 2-3 prescription medications that meaningfully reduce GLP-1 side effects when used alongside the GLP-1 itself, with explicit 'this requires a prescriber' framing."
+    target_words: 100
+    must_include:
+      - "explicit statement that everything in this article requires a prescriber"
+      - "the top 2-3 meds with one-line justification each"
+      - "what's out of scope (e.g., we don't cover the GLP-1 drugs themselves here)"
+
+  - id: methodology
+    heading: "How we ranked these"
+    purpose: "Methodology paragraph similar to supplements article but with the added wrinkle that off-label use is included and explicitly labeled."
+    target_words: 250
+    must_include:
+      - "evidence grading scheme"
+      - "on-label vs off-label distinction"
+      - "the criterion for inclusion - meaningful clinical use by GLP-1 prescribers, not just theoretical"
+
+  - id: prescriber_conversation
+    heading: "How to talk to your prescriber about these"
+    purpose: "Practical script. A reader can't just buy these - they have to bring it up at their next appointment. Give them the framing."
+    target_words: 300
+    must_include:
+      - "concrete language to use ('I'm experiencing X, I've read Y might help, what do you think?')"
+      - "what to bring with you (symptom diary, current med list)"
+      - "what to NOT do (don't doctor-shop, don't lie about other meds, don't start something at a friend's recommendation)"
+
+  - id: top_picks
+    heading: "The top picks"
+    purpose: "6-10 medications as full sections."
+    target_words: 2500
+    structure_per_medication:
+      - "H3 with med name (generic with parenthesized brand), and on-label/off-label tag"
+      - "What it does (mechanism)"
+      - "Why it matters for GLP-1 users (which side effects it addresses)"
+      - "Evidence tag and source"
+      - "Typical prescribed dose and titration"
+      - "Drug interactions with GLP-1s and common other meds"
+      - "Side effects of the medication itself"
+      - "Who is a candidate and who is not"
+      - "Cost reality (with and without insurance where relevant)"
+    minimum_medications: 6
+    maximum_medications: 10
+
+  - id: decision_by_concern
+    heading: "By primary concern"
+    purpose: "Decision tree similar to supplements article."
+    target_words: 500
+    must_include:
+      - "5-6 primary-concern branches"
+      - "for each: the medications worth asking about, in order of usual prescriber preference"
+      - "explicit notes on when to push for a referral to a specialist"
+
+  - id: what_we_left_off
+    heading: "What we deliberately left off"
+    purpose: "Editorial judgment. Medications that are commonly suggested but we don't endorse."
+    target_words: 300
+    must_include:
+      - "at least 2 commonly-suggested meds explicitly rejected"
+      - "reasoning per rejection"
+
+  - id: closing
+    heading: "Where to start"
+    purpose: "Practical closing note."
+    target_words: 250
+    must_include:
+      - "the single highest-leverage conversation to have at your next appointment"
+      - "explicit reminder that this is not medical advice"
+
+quality_requirements:
+  every_recommendation_has_evidence_tag: true
+  off_label_explicitly_labeled: true
+  every_med_lists_glp_interaction: true
+  no_recommendation_without_named_dose: true
+  footnote_density_min: 15
+
+output:
+  format: markdown
+  front_matter_handled_by_pipeline: true
+  footnotes_at_end: true

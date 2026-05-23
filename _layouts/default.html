@@ -1,0 +1,26 @@
+<!doctype html>
+<!--
+  The default layout is the outer HTML frame for every page.
+  Individual pages provide their own content, and Jekyll inserts that content
+  inside the <main> element below.
+-->
+<html lang="en">
+  <head>
+    {% include head.html %}
+  </head>
+  <body>
+    <div class="page">
+      {% include header.html %}
+
+      <!--
+        <main> is the primary readable content of the page.
+        Screen readers use this landmark to help visitors skip navigation.
+      -->
+      <main class="page-content" id="content">
+        {{ content }}
+      </main>
+
+      {% include footer.html %}
+    </div>
+  </body>
+</html>

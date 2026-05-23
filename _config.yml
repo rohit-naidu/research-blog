@@ -1,0 +1,47 @@
+# This is Jekyll's main configuration file.
+# Jekyll reads these values when it builds the static HTML site.
+
+# Basic identity for the browser tab, metadata, and header.
+title: "Rohit Naidu"
+description: "Research notes on eliminating GLP side effects."
+author: "Rohit Naidu"
+
+# Leave url/baseurl blank while developing locally.
+# For GitHub Pages later:
+# - url should become "https://YOUR_GITHUB_USERNAME.github.io"
+# - baseurl should become "/REPOSITORY_NAME" if this is a project site
+url: ""
+baseurl: ""
+
+# Social profile links used by the homepage Connect section.
+# Replace the placeholder URLs with your real profiles when ready.
+social:
+  linkedin: "https://www.linkedin.com/in/YOUR-LINKEDIN"
+  github: "https://github.com/YOUR-GITHUB"
+  devpost: "https://devpost.com/YOUR-DEVPOST"
+
+# Kramdown is Jekyll's default Markdown engine.
+# It supports useful academic-blog syntax like footnotes:
+# Example: This sentence has a note.[^1]
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# This keeps article URLs clean and avoids showing the post date in the URL.
+# The generated filenames still include dates because Jekyll requires dated
+# filenames for posts, but readers only see /articles/article-slug/.
+permalink: /articles/:title/
+
+# Files and folders Jekyll should ignore while building.
+# These are development-only files, not pages users should visit.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - .bundle
+  - vendor
+  - vendor/bundle
+  - vendor/cache
+  - vendor/gems
+  - vendor/ruby

@@ -1,0 +1,139 @@
+# Central pipeline configuration. Every model ID, cost cap, parallelism limit,
+# and behavior toggle lives here. Code reads this once at startup and never
+# hardcodes a model name elsewhere - so when OpenAI ships a better model next
+# month, you change it here and nowhere else.
+
+# ---------- Models ----------
+# These are the model IDs the orchestrator will send to each API.
+# All IDs are configurable so you can swap them as new models ship.
+#
+# IMPORTANT: as of May 2026 the exact API model slugs evolve quickly. The
+# preflight check (`python -m orchestrator preflight`) probes each ID before
+# the real run, so if any is wrong you'll know in seconds, not 35 minutes
+# into a Deep Research call.
+
+models:
+  # OpenAI Deep Research engine. This is what does the heavy academic browsing.
+  # Use a reasoning model + web_search_preview tool. If your tier doesn't have
+  # the dedicated Deep Research models, "gpt-5" with web_search_preview works
+  # as a slightly less deep but functional fallback.
+  deep_research: "o3-deep-research"
+  deep_research_fallback: "gpt-5"
+
+  # GPT-5 used for the cheaper non-research work: drafting articles from
+  # dossiers, red-teaming, revising. No browsing needed for these.
+  writer: "gpt-5"
+  reviewer: "gpt-5"
+
+  # Cheap GPT-5 mini for scoring, classification, dossier templating - the
+  # boring deterministic stuff that doesn't need flagship intelligence.
+  utility: "gpt-5-mini"
+
+  # Grok 4 with live search enabled. This is the community signal layer.
+  grok: "grok-4"
+
+# ---------- Cost caps ----------
+# Hard ceilings the orchestrator will not exceed. If a run is projected to
+# blow past the cap, it aborts BEFORE making the next API call and asks you
+# to either raise the cap or narrow the run.
+cost_caps_usd:
+  tier2_total: 150        # Tier 2 entire run (target ~$75-110, cap at 150)
+  tier3_total: 350        # Tier 3 entire run (target ~$170-220 add-on)
+  per_research_call: 8    # any single Deep Research call (target ~$3-5)
+  per_draft_call: 4       # any single drafting call (target ~$2)
+
+# ---------- Parallelism ----------
+# How many of each kind of API call run concurrently. Set conservatively to
+# avoid rate limits; bump up once you see how your tier behaves.
+parallelism:
+  deep_research: 6        # Tier 2 launches 6 Deep Research calls in parallel
+  grok_search: 6
+  drafts: 4               # 4 articles drafted in parallel
+  redteam: 12             # 4 articles x 3 reviewers each
+
+# ---------- Article roster ----------
+# The 4 Best-of-the-Best articles this pipeline produces. Each entry maps to
+# a slug used for filenames, a target post path in the Jekyll repo, and the
+# schema that defines the article's structure.
+articles:
+  - id: supplements
+    title: "Highest ROI Supplements"
+    slug: "botb-highest-roi-supplements"
+    post_path: "_posts/2026-05-22-botb-highest-roi-supplements.md"
+    schema: "botb/schemas/supplements.yaml"
+    prompt: "botb/prompts/tier2-01-supplements.md"
+    target_word_count: 4500
+
+  - id: medications
+    title: "Highest ROI Medications"
+    slug: "botb-highest-roi-medications"
+    post_path: "_posts/2026-05-22-botb-highest-roi-medications.md"
+    schema: "botb/schemas/medications.yaml"
+    prompt: "botb/prompts/tier2-02-medications.md"
+    target_word_count: 4500
+
+  - id: dosing
+    title: "Dosing Protocols (Core Theory Revisited)"
+    slug: "botb-dosing-protocols-core-theory-revisited"
+    post_path: "_posts/2026-05-22-botb-dosing-protocols-core-theory-revisited.md"
+    schema: "botb/schemas/dosing.yaml"
+    prompt: "botb/prompts/tier2-03-dosing.md"
+    target_word_count: 5000
+
+  - id: why_optimize
+    title: "Why Optimize?"
+    slug: "botb-why-optimize"
+    post_path: "_posts/2026-05-22-botb-why-optimize.md"
+    schema: "botb/schemas/why-optimize.yaml"
+    prompt: "botb/prompts/tier2-04-why-optimize.md"
+    target_word_count: 3500
+
+# ---------- Cross-cutting research themes ----------
+# These two prompts run in addition to the 4 article-level ones during Tier 2.
+# Their outputs feed all 4 article dossiers (which is what makes the corpus
+# "shared" - cross-cutting interventions appear in multiple articles).
+cross_cutting:
+  - id: intervention_landscape
+    prompt: "botb/prompts/tier2-05-cross-cutting.md"
+  - id: community_protocols
+    prompt: "botb/prompts/tier2-06-community.md"
+
+# ---------- Drug roster (used for prompt expansion) ----------
+# Substituted into prompts that say "GLP-1 agonists like {drugs}".
+drugs:
+  - name: "Semaglutide"
+    brands: ["Ozempic", "Wegovy"]
+  - name: "Tirzepatide"
+    brands: ["Mounjaro", "Zepbound"]
+  - name: "Orforglipron"
+    brands: ["Foundayo"]
+
+# ---------- Publishing ----------
+# Where to drop the final markdown files. Resolved relative to the pipeline
+# root unless overridden by JEKYLL_ROOT env var.
+publishing:
+  jekyll_root: ".."                # research-blog/ as seen from research-pipeline/
+  build_command: "bundle exec jekyll build"
+  link_check: true                 # run a link checker after publishing
+  capture_screenshots: false       # off by default; can flip on for QA runs
+
+# ---------- Safety ----------
+# The safety gate is the only escape hatch in full-auto mode. If the safety
+# red-team flags a critical issue that revision can't resolve, the article
+# is routed here instead of being published.
+safety:
+  critical_severity_threshold: 1   # any critical issue triggers manual review
+  manual_review_dir: "manual-review-queue"
+  require_disclaimer: true
+  disclaimer_file: "style/disclaimer.md"
+
+# ---------- Voice + style ----------
+voice:
+  exemplars_dir: "style/voice-exemplars"
+  style_guide: "style/style-guide.md"
+  min_exemplars_required: 1        # preflight fails if fewer than this exist
+
+# ---------- Output ----------
+output:
+  state_db: "state.sqlite"
+  log_dir: "logs"

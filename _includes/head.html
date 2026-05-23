@@ -1,0 +1,36 @@
+<!--
+  This include contains everything that belongs inside the HTML <head>.
+  The <head> does not show page content; it tells browsers how to render,
+  index, and style the page.
+-->
+
+<meta charset="utf-8">
+
+<!--
+  This viewport tag makes the layout scale correctly on phones.
+  Without it, mobile browsers pretend the page is much wider than it is.
+-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--
+  Build a useful browser-tab title.
+  If a page has its own title, show "Page Title | Site Title".
+  Otherwise, only show the site title.
+-->
+<title>
+  {% if page.title %}
+    {{ page.title }} | {{ site.title }}
+  {% else %}
+    {{ site.title }}
+  {% endif %}
+</title>
+
+<!-- Basic search/social metadata for link previews and search engines. -->
+<meta name="description" content="{{ page.description | default: site.description }}">
+<meta name="author" content="{{ site.author }}">
+
+<!--
+  This stylesheet holds the whole retro academic visual system:
+  typography, spacing, links, article lists, footnotes, and sidenotes.
+-->
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">

@@ -1,0 +1,675 @@
+@charset "UTF-8";
+
+/*
+  Retro academic stylesheet.
+
+  The goal is not to look like a modern startup blog. The goal is to feel like
+  a careful, old research notebook: serif type, readable line lengths, quiet
+  colors, underlined links, and very little decoration.
+*/
+
+:root {
+  /* Main page colors: intentionally plain black and white. */
+  --paper: #ffffff;
+  --paper-shadow: #ffffff;
+  --ink: #000000;
+  --muted-ink: #000000;
+  --rule: #000000;
+
+  /*
+    One neutral card tint used for every homepage section so the page reads
+    as separated chapters of the same notebook without being color-coded.
+  */
+  --accent-card: #ffffff;
+  --accent-rule: #000000;
+
+  /* Links stay black; underlines carry the affordance. */
+  --link: #000000;
+  --visited: #000000;
+
+  /* Typography settings used across the site. */
+  --serif: "ET Book", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --mono: "Courier New", Courier, monospace;
+  --measure: 46rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  /*
+    Smooth font rendering makes serif type look less jagged on macOS.
+    Other browsers ignore unsupported properties safely.
+  */
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  /*
+    Fluid base font size: everything else is sized in rem, so this single
+    value proportionally scales typography, spacing, and card padding with
+    the viewport. Clamps prevent the page from looking tiny on a phone or
+    cartoonishly large on a 4K monitor.
+  */
+  font-size: clamp(17px, 0.55vw + 14px, 22px);
+  line-height: 1.62;
+
+  /*
+    Body becomes a flex column so the footer naturally sticks to the bottom
+    of the viewport when content is short.
+  */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  width: min(calc(100% - 2rem), var(--measure));
+  margin: 0 auto;
+  padding: 2rem 0 3rem;
+
+  /*
+    Inner column also flexes vertically so .page-content can grow and push
+    the footer down even on pages with very little content.
+  */
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  padding-top: 2.25rem;
+  flex: 1 0 auto;
+}
+
+/*
+  Header and footer deliberately stay simple: a research blog should make the
+  writing feel primary, not the navigation.
+*/
+.site-header,
+.site-footer {
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  color: var(--muted-ink);
+  letter-spacing: 0.02em;
+}
+
+.site-header {
+  display: flex;
+  justify-content: center;
+  padding: 0.9rem 0;
+  text-align: center;
+}
+
+.site-title {
+  color: var(--ink);
+  font-size: clamp(1.15rem, 3vw, 1.75rem);
+  font-variant: small-caps;
+  letter-spacing: 0.1em;
+  line-height: 1.25;
+  text-decoration-thickness: 1px;
+}
+
+.site-nav {
+  display: flex;
+  gap: 0.85rem;
+}
+
+.site-footer {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 500;
+  line-height: 1.15;
+  margin: 2.4rem 0 0.8rem;
+}
+
+h1 {
+  font-size: clamp(2.1rem, 8vw, 4.2rem);
+  letter-spacing: -0.04em;
+  margin-top: 0;
+}
+
+h2,
+h3 {
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+}
+
+p {
+  margin: 1rem 0;
+}
+
+.lede {
+  font-size: 1.35rem;
+  line-height: 1.45;
+}
+
+.welcome-line {
+  color: var(--muted-ink);
+  font-size: 1rem;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  margin: 0 0 1.1rem;
+}
+
+.intro-title,
+.intro-mission {
+  font-size: 1.35rem;
+  letter-spacing: 0;
+  line-height: 1.45;
+}
+
+.homepage-intro {
+  text-align: center;
+}
+
+/*
+  Card style used to box the authors section so the two bios sit clearly
+  together. The top mission line and bottom findings link render plainly
+  to keep the page airy.
+*/
+.card {
+  background: var(--accent-card);
+  border: 1px solid var(--accent-rule);
+  border-radius: 3px;
+  margin: 1.6rem 0;
+  padding: 1.4rem 1.6rem;
+}
+
+.intro-block {
+  color: var(--muted-ink);
+  font-size: 1.08rem;
+  line-height: 1.45;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 42rem;
+  text-align: left;
+}
+
+.intro-block p {
+  margin: 0.2rem 0;
+}
+
+.intro-block ul {
+  margin: 0.45rem 0 0;
+  padding-left: 1.45rem;
+}
+
+.intro-block li + li {
+  margin-top: 0.45rem;
+}
+
+.intro-title {
+  color: var(--ink);
+  margin-bottom: 0.35rem;
+}
+
+.author-link,
+.author-link:visited {
+  color: var(--ink);
+  text-decoration-color: var(--ink);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+.author-link:hover,
+.author-link:focus {
+  color: var(--link);
+}
+
+.intro-mission {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+}
+
+.card--mission .intro-clinic {
+  margin-bottom: 0;
+}
+
+/*
+  When the author block sits inside the authors card we already have the card's
+  background and border, so we remove the leftover top margin that pushed the
+  first author dotted rule away from the card edge.
+*/
+.card--authors .intro-block {
+  margin-top: 0;
+}
+
+.card--authors .author-bio:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.card--findings .findings-link {
+  margin: 0;
+}
+
+.messy-highlight {
+  /*
+    Layered gradients create an uneven marker swipe without requiring images.
+    The small rotation makes it feel hand-marked instead of perfectly digital.
+  */
+  background: transparent;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  display: inline;
+  font-weight: 700;
+  padding: 0.08rem 0.28rem 0.12rem;
+  transform: rotate(-0.6deg);
+}
+
+.rising-number {
+  font-family: var(--mono);
+  font-weight: 700;
+}
+
+.red-marker-underline {
+  /*
+    This keeps the danger/emphasis subtle: a thin uneven red marker line under
+    only the fear phrase, separate from the yellow mission highlight.
+  */
+  background: transparent;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding-bottom: 0.06em;
+}
+
+.intro-clinic {
+  margin-top: 0.35rem;
+}
+
+.findings-link {
+  color: var(--ink);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 2rem 0 1rem;
+}
+
+.findings-link a {
+  color: var(--link);
+  font-weight: 700;
+}
+
+.findings-title {
+  font-size: clamp(2rem, 6vw, 3.2rem);
+}
+
+.findings-intro {
+  color: var(--muted-ink);
+}
+
+.author-bio {
+  border-top: 1px dotted var(--rule);
+  padding-top: 1rem;
+}
+
+.author-bio + .author-bio {
+  margin-top: 1.35rem;
+}
+
+.bio {
+  color: var(--muted-ink);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.bio ul {
+  margin: 0.45rem 0 0;
+}
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 0.06em;
+  text-underline-offset: 0.16em;
+}
+
+a:visited {
+  color: var(--visited);
+}
+
+a:hover,
+a:focus {
+  background: var(--paper-shadow);
+}
+
+/*
+  A quiet ornamental rule gives pages an old academic feel without needing
+  images or icons.
+*/
+hr {
+  border: 0;
+  color: var(--rule);
+  margin: 2.5rem auto;
+  text-align: center;
+}
+
+hr::after {
+  content: "* * *";
+  font-size: 0.9rem;
+  letter-spacing: 0.7em;
+}
+
+ul,
+ol {
+  padding-left: 1.4rem;
+}
+
+li + li {
+  margin-top: 0.35rem;
+}
+
+.article-catalog,
+.article-list,
+.connect {
+  list-style: none;
+  padding-left: 0;
+}
+
+.drug-group {
+  border-top: 1px solid var(--rule);
+  margin-top: 2.2rem;
+  padding-top: 1.2rem;
+}
+
+.drug-group h3 {
+  font-size: 1.55rem;
+  margin-top: 0;
+}
+
+.system-group {
+  border-bottom: 1px dotted var(--rule);
+  margin: 0.7rem 0;
+  padding: 0.35rem 0 0.55rem;
+}
+
+.system-group summary {
+  color: var(--muted-ink);
+  cursor: pointer;
+  font-size: 1rem;
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  list-style-position: outside;
+  padding: 0.25rem 0;
+}
+
+.system-group summary:hover,
+.system-group summary:focus {
+  background: var(--paper-shadow);
+}
+
+.system-emoji {
+  font-variant: normal;
+  letter-spacing: 0;
+  margin-left: 0.35rem;
+  margin-right: 0.35rem;
+}
+
+.article-count {
+  color: var(--muted-ink);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-variant: normal;
+  letter-spacing: 0;
+  margin-left: 0.35rem;
+}
+
+.system-group[open] summary {
+  margin-bottom: 0.45rem;
+}
+
+.system-group:not([open]) .article-list {
+  display: none;
+}
+
+.article-list {
+  list-style: disc;
+  margin-top: 0.35rem;
+  padding-left: 2.1rem;
+}
+
+.article-list li {
+  border-bottom: 1px dotted var(--rule);
+  padding: 0.18rem 0 0.3rem;
+}
+
+/*
+  Featured drug variant: shown directly under the drug heading
+  with no <details> wrapper, so we give it a bit more top spacing
+  and slightly looser line rhythm so the four curated picks breathe.
+*/
+.article-list--featured {
+  margin-top: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+.article-list--featured li {
+  padding: 0.32rem 0 0.42rem;
+}
+
+.date {
+  color: var(--muted-ink);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+}
+
+.connect {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem 1.2rem;
+}
+
+.connect li::before {
+  content: "[";
+  color: var(--muted-ink);
+}
+
+.connect li::after {
+  content: "]";
+  color: var(--muted-ink);
+}
+
+/*
+  Article pages use CSS counters so headings read like a research document:
+  1. Background
+  1.1 Mechanism
+*/
+.post-content {
+  counter-reset: section;
+  hyphens: auto;
+  text-align: justify;
+}
+
+.post-content h2 {
+  counter-increment: section;
+  counter-reset: subsection;
+}
+
+.post-content h2::before {
+  content: counter(section) ". ";
+  color: var(--muted-ink);
+  font-variant: normal;
+}
+
+.post-content h3 {
+  counter-increment: subsection;
+}
+
+.post-content h3::before {
+  content: counter(section) "." counter(subsection) " ";
+  color: var(--muted-ink);
+  font-variant: normal;
+}
+
+.post-header {
+  margin-bottom: 2rem;
+}
+
+.post-title {
+  margin-bottom: 0.4rem;
+}
+
+.post-meta {
+  color: var(--muted-ink);
+  font-size: 0.95rem;
+  font-style: italic;
+  margin-top: 0;
+}
+
+blockquote {
+  border-left: 3px solid var(--rule);
+  color: var(--muted-ink);
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+}
+
+code,
+pre {
+  font-family: var(--mono);
+}
+
+code {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  font-size: 0.9em;
+  padding: 0.05rem 0.2rem;
+}
+
+pre {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  overflow-x: auto;
+  padding: 1rem;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+}
+
+/*
+  Kramdown turns Markdown footnotes into a .footnotes block.
+  We make that block feel like a paper's reference apparatus.
+*/
+.footnotes {
+  border-top: 1px solid var(--rule);
+  color: var(--muted-ink);
+  font-size: 0.9rem;
+  margin-top: 3rem;
+  padding-top: 1rem;
+}
+
+.footnotes ol {
+  padding-left: 1.2rem;
+}
+
+.reversefootnote {
+  font-family: var(--mono);
+  text-decoration: none;
+}
+
+/*
+  Optional sidenotes:
+  In a Markdown article, write:
+  <aside class="sidenote">Your margin note here.</aside>
+  On wide screens it floats into the right margin. On small screens it becomes
+  an inline boxed note so mobile readers are not forced to zoom.
+*/
+.sidenote {
+  background: var(--paper);
+  border-left: 2px solid var(--rule);
+  color: var(--muted-ink);
+  float: right;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  margin: 0.2rem -13rem 1rem 1.2rem;
+  padding-left: 0.7rem;
+  width: 11rem;
+}
+
+table {
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  margin: 1.5rem 0;
+  width: 100%;
+}
+
+th,
+td {
+  border-bottom: 1px solid var(--rule);
+  padding: 0.4rem 0.5rem;
+  text-align: left;
+}
+
+th {
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+}
+
+img {
+  display: block;
+  height: auto;
+  margin: 1.5rem auto;
+  max-width: 100%;
+}
+
+figcaption {
+  color: var(--muted-ink);
+  font-size: 0.9rem;
+  font-style: italic;
+  text-align: center;
+}
+
+@media (max-width: 78rem) {
+  .sidenote {
+    float: none;
+    margin: 1rem 0;
+    padding: 0.7rem 0.9rem;
+    width: auto;
+  }
+}
+
+@media (max-width: 62rem) {
+  body {
+    font-size: 18px;
+  }
+
+  .post-content {
+    text-align: left;
+  }
+}
+
+@media (max-width: 38rem) {
+  .site-header {
+    display: block;
+  }
+
+  .site-nav {
+    margin-top: 0.25rem;
+  }
+
+  .article-list li {
+    display: block;
+  }
+
+  .date {
+    display: block;
+    margin-bottom: 0.1rem;
+  }
+}

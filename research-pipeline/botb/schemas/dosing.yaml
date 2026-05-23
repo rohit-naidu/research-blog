@@ -1,0 +1,115 @@
+# Article schema: Dosing Protocols (Core Theory Revisited).
+# This article has a different shape than the supplement/med rankings -
+# it's a how-to on dosing strategies, not a ranked list.
+
+id: dosing
+title: "Dosing Protocols (Core Theory Revisited)"
+target_word_count: 5000
+
+sections:
+  - id: tl_dr
+    heading: null
+    purpose: "Opening paragraph. The central claim: standard FDA titration is too aggressive for most people. Here are the alternative protocols that work better."
+    target_words: 120
+    must_include:
+      - "the core thesis stated plainly"
+      - "the 3-4 alternative protocols named"
+      - "who this article is for and who it isn't"
+
+  - id: why_standard_titration_fails
+    heading: "Why standard titration causes most of the problems"
+    purpose: "Set up the rest of the article by explaining what's wrong with the default."
+    target_words: 600
+    must_include:
+      - "the FDA-approved titration schedule for each of the 3 GLP-1 drugs"
+      - "the population those schedules were derived from"
+      - "the failure modes (most common side effects are dose-related and titration-related)"
+      - "the discontinuation rate at each titration step from published trial data"
+
+  - id: slow_titration
+    heading: "Slow titration"
+    purpose: "The simplest alternative. Just go slower."
+    target_words: 600
+    must_include:
+      - "the protocol (specific weeks-at-each-dose schedule)"
+      - "who it's best for"
+      - "what evidence supports it"
+      - "tradeoff: takes longer to reach therapeutic dose"
+
+  - id: microdosing
+    heading: "Microdosing"
+    purpose: "Sub-titration doses, the biohacker favorite."
+    target_words: 700
+    must_include:
+      - "the practical mechanics (how do you actually microdose an injection pen)"
+      - "typical microdose ranges for each of the 3 drugs"
+      - "what evidence exists vs. what's purely community-reported"
+      - "who it's appropriate for (typically those with severe side effects on standard doses, or those primarily seeking metabolic benefits rather than weight loss)"
+
+  - id: weekend_cycling
+    heading: "Weekend cycling and pulse dosing"
+    purpose: "Non-weekly schedules."
+    target_words: 500
+    must_include:
+      - "the protocol options (every-10-days, every-2-weeks, pulse-then-rest)"
+      - "rationale and evidence"
+      - "warnings (rebound risk, especially in patients with diabetes)"
+
+  - id: dose_splitting
+    heading: "Dose splitting"
+    purpose: "Same total weekly dose, but split across multiple injections."
+    target_words: 400
+    must_include:
+      - "the mechanics (how to actually split a weekly dose)"
+      - "evidence that this reduces side effect intensity"
+      - "warnings (steady-state pharmacokinetics, not all drugs benefit equally)"
+
+  - id: timing_and_food
+    heading: "Timing, meal pacing, and hydration loading"
+    purpose: "Same dose, better outcomes through when-and-with-what."
+    target_words: 600
+    must_include:
+      - "best time of day to inject and why"
+      - "best day of week"
+      - "what to eat in the 24 hours after injection"
+      - "hydration protocols (specific volumes, electrolyte ratios)"
+      - "exercise timing relative to injection"
+
+  - id: oral_specifics
+    heading: "Oral protocols (orforglipron and rybelsus)"
+    purpose: "Different drug class, different rules."
+    target_words: 400
+    must_include:
+      - "pill-vs-injection differences in pharmacokinetics"
+      - "specific timing requirements for absorption"
+      - "what doesn't transfer from injectable protocols"
+
+  - id: decision_tree
+    heading: "Which protocol for whom"
+    purpose: "The synthesis. A decision tree that maps the reader's situation to a recommended protocol."
+    target_words: 600
+    must_include:
+      - "branches by: primary goal (weight loss vs. metabolic), severity of side effects, time pressure, comorbidities"
+      - "explicit recommended protocol for each branch with starting parameters"
+      - "a 'when to abandon this protocol and try another' guidance section"
+
+  - id: closing
+    heading: "Where to start"
+    purpose: "Practical closing."
+    target_words: 200
+    must_include:
+      - "what to ask your prescriber at your next visit"
+      - "what to track week-over-week"
+      - "explicit not-medical-advice reminder"
+
+quality_requirements:
+  every_protocol_has_specific_schedule: true
+  every_protocol_has_evidence_grade: true
+  every_drug_covered_separately: true
+  decision_tree_is_concrete_not_vague: true
+  footnote_density_min: 20
+
+output:
+  format: markdown
+  front_matter_handled_by_pipeline: true
+  footnotes_at_end: true

@@ -1,0 +1,82 @@
+# Article schema: Why Optimize?
+# This is the philosophical / motivational case article. It's shorter than
+# the other three and has a more essayistic structure.
+
+id: why_optimize
+title: "Why Optimize?"
+target_word_count: 3500
+
+sections:
+  - id: opening
+    heading: null
+    purpose: "A compact opening that sets up the central tension: most people on GLP-1s do nothing about side effects, treating them as the price of admission. We think that's a mistake. Here's why."
+    target_words: 200
+    must_include:
+      - "the central claim stated plainly"
+      - "the stakes - this isn't optional optimization, it's about long-term sustainability of the therapy itself"
+
+  - id: discontinuation_problem
+    heading: "Most people quit"
+    purpose: "Set up the cost-of-not-optimizing case with the discontinuation statistics."
+    target_words: 500
+    must_include:
+      - "real discontinuation rates from published studies (1-year, 2-year)"
+      - "the primary reasons cited"
+      - "the rebound weight gain data on discontinuation"
+      - "why this is the hidden cost of side effects"
+
+  - id: long_term_costs
+    heading: "What unmitigated side effects actually cost you"
+    purpose: "Per-side-effect long-term consequence walkthrough. Pick the 5-6 highest-stakes ones and go deep."
+    target_words: 1500
+    structure_per_consequence:
+      - "the side effect"
+      - "the short-term experience (what most people focus on)"
+      - "the long-term cost most people don't see"
+      - "what the evidence says about reversibility"
+    consequences_to_cover:
+      - "sarcopenia and lean mass loss - fall risk in older age, metabolic damage, weight regain after discontinuation"
+      - "gastroparesis - risk of permanent gastric dysmotility, anesthesia and surgical risk"
+      - "mental health side effects - therapy discontinuation, rebound depression"
+      - "nutrient deficiencies - bone density loss, hair loss, cognitive effects"
+      - "cardiovascular changes - sustained resting heart rate increases, autonomic adaptation"
+      - "kidney strain - cumulative AKI risk on top of existing CKD"
+
+  - id: compounding_upside
+    heading: "The compounding case for optimization"
+    purpose: "Flip from cost-of-not to value-of-yes. Make the affirmative case."
+    target_words: 600
+    must_include:
+      - "sustainability of therapy = durable weight loss + cardiometabolic gains"
+      - "quality of life during treatment, not just outcome"
+      - "psychological benefit of feeling in control of the process"
+      - "the social/professional cost of bad side effects (work disruption, social withdrawal)"
+
+  - id: philosophy
+    heading: "A philosophy of intervention"
+    purpose: "The most personal-essayistic section. What it actually means to optimize, framed against alternatives (do nothing, do everything, do random things)."
+    target_words: 500
+    must_include:
+      - "what optimization is not (extreme biohacking, supplement-stacking-for-its-own-sake)"
+      - "the principle: smallest effective intervention, evidence-graded, sustained"
+      - "the meta-point: most optimization is bottom-up (sleep, protein, electrolytes) before top-down (HMB, ondansetron)"
+
+  - id: closing
+    heading: "Where to start"
+    purpose: "Hand off to the other 3 BOTB articles."
+    target_words: 200
+    must_include:
+      - "explicit links to the other 3 BOTB articles by topic"
+      - "the one thing to do this week if reader is brand new"
+
+quality_requirements:
+  cites_actual_discontinuation_data: true
+  every_long_term_cost_has_source: true
+  no_fearmongering: true                     # the case is honest, not catastrophizing
+  doesnt_overpromise: true
+  footnote_density_min: 15
+
+output:
+  format: markdown
+  front_matter_handled_by_pipeline: true
+  footnotes_at_end: true

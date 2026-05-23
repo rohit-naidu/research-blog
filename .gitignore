@@ -1,0 +1,26 @@
+# Jekyll writes the fully generated website into this folder.
+# We do not commit it because GitHub Pages rebuilds the site automatically.
+_site/
+
+# Jekyll cache files speed up local builds, but they are machine-specific.
+.jekyll-cache/
+
+# Bundler can install gems into this folder if configured locally.
+# It should stay out of git because dependencies are described in Gemfile.
+vendor/
+
+# Bundler writes machine-specific local settings here when using --path.
+.bundle/
+
+# macOS creates this metadata file in folders sometimes.
+.DS_Store
+
+# Research pipeline local secrets and generated outputs.
+research-pipeline/.env
+research-pipeline/venv/
+research-pipeline/state.sqlite
+research-pipeline/state.sqlite-journal
+research-pipeline/botb/tier2/
+research-pipeline/botb/tier3/
+research-pipeline/manual-review-queue/
+research-pipeline/logs/

@@ -1,0 +1,84 @@
+# Article schema: Highest ROI Supplements.
+# Read by orchestrator/stages/draft.py and embedded into the drafting prompt
+# as a "your output must follow this structure" requirement.
+
+id: supplements
+title: "Highest ROI Supplements"
+target_word_count: 4500
+
+# The narrative arc the drafter must follow. Each section is required.
+sections:
+  - id: tl_dr
+    heading: null                  # rendered without an H2 - this is the opening paragraph
+    purpose: "One-paragraph bottom line. If reader only reads this, they get the spine: 'here are the supplements that matter most for GLP-1 users, ranked, with the headline reason.'"
+    target_words: 100
+    must_include:
+      - "the top 2-3 supplements by name with one-line justification each"
+      - "what this article does NOT cover (out of scope, e.g., illegal substances, prescription drugs)"
+
+  - id: methodology
+    heading: "How we ranked these"
+    purpose: "Transparent methodology paragraph. Two short paragraphs explaining the research approach so the reader trusts the ranking. This is what separates expert content from a Reddit list."
+    target_words: 200
+    must_include:
+      - "evidence grading scheme (A through E) with one-sentence definition of each"
+      - "the cross-cutting criterion - supplements that help across multiple side effects rank higher"
+      - "honest caveat about what's not knowable from current evidence"
+
+  - id: top_picks
+    heading: "The top picks"
+    purpose: "The body of the article: 8-12 supplements as full sections, ranked by composite leverage. Each sub-section is a deep dive on one supplement."
+    target_words: 3000
+    structure_per_supplement:
+      - "H3 heading with supplement name and primary use"
+      - "What it does (mechanism, 2-3 sentences)"
+      - "Why it matters for GLP-1 users specifically (the side effects it addresses)"
+      - "Evidence: tagged grade [E:A] through [E:E] with one-sentence justification and footnoted source"
+      - "Dose: specific, including form/brand if relevant, timing, with-food-or-not"
+      - "Stacking notes: what to combine with, what to avoid combining with"
+      - "Who shouldn't take it: contraindications, drug interactions with GLP-1s, conditions to flag"
+      - "Cost reality: rough $/month at effective dose"
+    minimum_supplements: 8
+    maximum_supplements: 12
+    ordering: "by composite leverage - cross-cutting interventions first, then specialized picks"
+
+  - id: stacking_guide
+    heading: "Building your stack by primary concern"
+    purpose: "A practical decision tree. Reader picks their primary concern (muscle loss, GI distress, energy, mental health, hair/skin) and gets a recommended 2-3 supplement starting protocol."
+    target_words: 600
+    must_include:
+      - "5-6 primary-concern branches"
+      - "for each branch: a recommended starter stack (2-3 supplements with doses)"
+      - "an explicit 'minimum core stack' recommendation for anyone on GLP-1s regardless of primary concern"
+
+  - id: notable_omissions
+    heading: "What we deliberately left off the list"
+    purpose: "Show editorial judgment by naming 2-4 popular supplements you would NOT include and explaining why (insufficient evidence, safety concerns, redundancy)."
+    target_words: 300
+    must_include:
+      - "at least 2 commonly-touted supplements explicitly rejected"
+      - "the reasoning for each rejection (not just 'we didn't have room')"
+
+  - id: where_to_start
+    heading: "Where to start"
+    purpose: "Closing practical note. If reader can only buy 2 things this week, what should they be."
+    target_words: 200
+    must_include:
+      - "the absolute 'if you do nothing else' pick"
+      - "a sequencing recommendation (week 1, week 2, week 4 additions)"
+
+# Quality bars enforced by the red-team stage.
+quality_requirements:
+  every_recommendation_has_evidence_tag: true
+  every_dose_recommendation_is_specific: true
+  no_vague_recommendations: true
+  must_include_creatine: true            # if creatine doesn't appear, something's wrong
+  must_include_electrolytes: true        # ditto
+  resistance_training_handled: true      # either included with non-supplement flag or explicitly excluded with reason
+  footnote_density_min: 15               # at least 15 distinct footnoted sources
+
+# Output format.
+output:
+  format: markdown
+  front_matter_handled_by_pipeline: true     # writer produces body only
+  footnotes_at_end: true

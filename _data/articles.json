@@ -1,0 +1,34 @@
+[
+  {
+    "drug": "Best of the Best (BOTB)",
+    "slug": "botb",
+    "featured": true,
+    "systems": [
+      {
+        "name": "Essentials",
+        "items": [
+          {
+            "title": "Dosing Protocols (Core Theory Revisited)",
+            "slug": "botb-dosing-protocols-core-theory-revisited",
+            "url": "/articles/botb-dosing-protocols-core-theory-revisited/"
+          },
+          {
+            "title": "Highest ROI Supplements",
+            "slug": "botb-highest-roi-supplements",
+            "url": "/articles/botb-highest-roi-supplements/"
+          },
+          {
+            "title": "Highest ROI Medications",
+            "slug": "botb-highest-roi-medications",
+            "url": "/articles/botb-highest-roi-medications/"
+          },
+          {
+            "title": "Why Optimize?",
+            "slug": "botb-why-optimize",
+            "url": "/articles/botb-why-optimize/"
+          }
+        ]
+      }
+    ]
+  }
+]

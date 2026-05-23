@@ -1,0 +1,29 @@
+# Python deps for the BOTB Tier 2/3 research pipeline.
+#
+# Why each one is here:
+#   openai          - official OpenAI Python SDK; we use the Responses API
+#                     for Deep Research (web_search_preview + reasoning model)
+#                     and for the GPT-5 drafting/red-team/revision calls.
+#   httpx           - async HTTP client; used for the xAI Grok API which is
+#                     OpenAI-compatible REST but not in the openai SDK.
+#   pydantic        - typed data models for research outputs, dossiers, reviews.
+#                     Catches mismatched JSON shapes before they reach a draft.
+#   tenacity        - retry with exponential backoff for flaky API calls.
+#   pyyaml          - read config.yaml and the per-article schemas.
+#   python-dotenv   - load API keys from .env without exporting them globally.
+#   rich            - pretty terminal output for the live progress dashboard.
+#   aiosqlite       - async SQLite for the resumable job + cost ledger.
+#   aiofiles        - async file IO so the orchestrator never blocks on disk
+#                     while waiting for a 30-min Deep Research call.
+#   markdown-it-py  - validate the rendered markdown before publishing.
+
+openai>=1.55.0
+httpx>=0.27.0
+pydantic>=2.7.0
+tenacity>=8.2.0
+pyyaml>=6.0.2
+python-dotenv>=1.0.1
+rich>=13.7.0
+aiosqlite>=0.20.0
+aiofiles>=24.1.0
+markdown-it-py>=3.0.0
