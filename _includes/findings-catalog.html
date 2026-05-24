@@ -1,6 +1,12 @@
 <!--
-  Findings catalog from _data/articles.json.
-  Featured drugs (BOTB): flat numbered list. Others: collapsible by system.
+  Shared findings catalog.
+  Renders the Drug -> body system -> article breakdown from _data/articles.json.
+
+  Drugs flagged with `featured: true` (e.g. "Best of the Best (BOTB)") render
+  their articles directly under the drug heading as a flat bulleted list — no
+  dropdown wrapper — so the curated picks stay one click away from any reader.
+  All other drug entries keep the collapsible <details>/<summary> structure
+  because each drug has many body systems and several dozen articles each.
 -->
 <section class="article-catalog" aria-label="Findings grouped by drug">
   {% for drug in site.data.articles %}
@@ -8,7 +14,12 @@
       <h3>{{ drug.drug }}</h3>
 
       {% if drug.featured %}
-        <ol class="article-list article-list--featured">
+        <!--
+          Featured drug: flatten all items across systems into one list.
+          Today BOTB only has a single "Essentials" system, but iterating in
+          this order keeps the template safe if we ever add more buckets.
+        -->
+        <ul class="article-list article-list--featured">
           {% for system in drug.systems %}
             {% for article in system.items %}
               <li>
@@ -16,22 +27,52 @@
               </li>
             {% endfor %}
           {% endfor %}
-        </ol>
+        </ul>
       {% else %}
         {% for system in drug.systems %}
+          <!--
+            <details> creates a native click-to-open dropdown that keeps
+            the long article list hidden until a reader picks a system.
+          -->
           <details class="system-group">
             <summary>
+              {% assign system_name = system.name %}
+
+              <!--
+                Each body system gets a visual marker.
+                These emojis are decorative; the text label carries the meaning.
+              -->
+              {% if system_name contains "Gastrointestinal" %}
+                <span class="system-emoji" aria-hidden="true">🍽️</span>
+              {% elsif system_name contains "Endocrine" %}
+                <span class="system-emoji" aria-hidden="true">🧬</span>
+              {% elsif system_name contains "Pancreatic" %}
+                <span class="system-emoji" aria-hidden="true">🧪</span>
+              {% elsif system_name contains "Neurological" %}
+                <span class="system-emoji" aria-hidden="true">🧠</span>
+              {% elsif system_name contains "Ocular" %}
+                <span class="system-emoji" aria-hidden="true">👁️</span>
+              {% elsif system_name contains "Cardiovascular" %}
+                <span class="system-emoji" aria-hidden="true">❤️</span>
+              {% elsif system_name contains "Dermatological" %}
+                <span class="system-emoji" aria-hidden="true">🧴</span>
+              {% elsif system_name contains "Medication" %}
+                <span class="system-emoji" aria-hidden="true">💊</span>
+              {% else %}
+                <span class="system-emoji" aria-hidden="true">📌</span>
+              {% endif %}
+
               <span class="system-name">{{ system.name }}</span>
               <span class="article-count">({{ system.items | size }})</span>
             </summary>
 
-            <ol class="article-list">
+            <ul class="article-list">
               {% for article in system.items %}
                 <li>
                   <a href="{{ article.url | relative_url }}">{{ article.title }}</a>
                 </li>
               {% endfor %}
-            </ol>
+            </ul>
           </details>
         {% endfor %}
       {% endif %}
