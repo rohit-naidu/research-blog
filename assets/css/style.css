@@ -251,13 +251,62 @@ p {
   background and border, so we remove the leftover top margin that pushed the
   first author dotted rule away from the card edge.
 */
-.card--authors .intro-block {
-  margin-top: 0;
+.card--roster {
+  text-align: left;
 }
 
-.card--authors .author-bio:first-of-type {
-  border-top: 0;
-  padding-top: 0;
+.roster-block + .roster-block {
+  border-top: 1px solid var(--rule);
+  margin-top: 1.5rem;
+  padding-top: 1.35rem;
+}
+
+.roster-heading {
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-variant: small-caps;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  margin: 0 0 0.85rem;
+}
+
+.roster-summary {
+  color: var(--muted-ink);
+  font-size: 0.98rem;
+  line-height: 1.45;
+  margin: 0 0 0.85rem;
+}
+
+.roster-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.roster-list li {
+  align-items: baseline;
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  padding: 0.55rem 0;
+}
+
+.roster-list li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.roster-name {
+  color: var(--ink);
+  flex: 1 1 auto;
+}
+
+.roster-org {
+  color: var(--muted-ink);
+  flex: 0 1 auto;
+  font-size: 0.95rem;
+  text-align: right;
 }
 
 .card--findings .findings-link {
@@ -300,8 +349,10 @@ p {
 
 .findings-link {
   color: var(--ink);
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: 1.05rem;
+  font-weight: 500;
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
   margin: 2rem 0 1rem;
 }
 
@@ -729,5 +780,14 @@ figcaption {
   .date {
     display: block;
     margin-bottom: 0.1rem;
+  }
+
+  .roster-list li {
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .roster-org {
+    text-align: left;
   }
 }

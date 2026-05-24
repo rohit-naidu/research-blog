@@ -1,17 +1,9 @@
 ---
-# This front matter tells Jekyll to process this file.
-# layout: default means Jekyll wraps this page with _layouts/default.html.
 layout: default
 title: Home
 ---
 
-<!--
-  Homepage: kept deliberately quiet.
-  One mission sentence, the two author bios, and a single link into the
-  detailed findings page. No highlights, no banners, no animations.
--->
-<section class="homepage-intro" aria-label="Mission and authors">
-  <!-- Mission line. Plain sentence, no emphasis stacking. -->
+<section class="homepage-intro" aria-label="Introduction">
   <p class="lede intro-mission">
     We are working on making GLPs side effect free for the 108M obese
     Americans too scared to start.
@@ -21,44 +13,48 @@ title: Home
     in side effect mitigation.
   </p>
 
-  <!-- Authors card. The only visually grouped block on the page. -->
-  <div class="card card--authors">
-    <div class="intro-block">
-      <section class="author-bio">
-        <p class="intro-title">
-          Meet <a class="author-link" href="http://Mahesharunachalam.com">Mahesh</a>, the researcher
-        </p>
-        <ul>
-          <li>
-            4+ years of biotech research, published in
-            <em>Journal of Investigative Medicine</em>.
-          </li>
-          <li>
-            <em>In-silico</em> and <em>wet-lab</em> research across
-            USC, UCI Med, and Texas Tech.
-          </li>
-        </ul>
-      </section>
+  <div class="card card--roster">
+    <section class="roster-block">
+      <h2 class="roster-heading">Team</h2>
+      <ul class="roster-list">
+        <li>
+          <span class="roster-name">
+            <a class="author-link" href="http://Mahesharunachalam.com">Mahesh Arunachalam</a>
+          </span>
+          <span class="roster-org">sideeffect.me</span>
+        </li>
+        <li>
+          <span class="roster-name">
+            <a class="author-link" href="https://www.linkedin.com/in/rohit-naidu-b65051205/">Rohit Naidu</a>
+          </span>
+          <span class="roster-org">sideeffect.me</span>
+        </li>
+      </ul>
+    </section>
 
-      <section class="author-bio">
-        <p class="intro-title">
-          Meet <a class="author-link" href="https://www.linkedin.com/in/rohit-naidu-b65051205/">Rohit</a>, the biohacker
-        </p>
-        <ul>
-          <li>
-            USA Computing Olympiad Platinum Rank Holder (Top 1%).
-          </li>
-          <li>
-            Pending publication in
-            <em>International Journal of Obesity</em>.
-          </li>
-        </ul>
-      </section>
-    </div>
+    <section class="roster-block">
+      <h2 class="roster-heading">Board of Advisors</h2>
+      <p class="roster-summary">
+        Combined 60+ years of experience in the pharmaceutical industry.
+      </p>
+      <ul class="roster-list">
+        <li>
+          <span class="roster-name">Dr. Chowdari</span>
+          <span class="roster-org">Bristol Myers Squibb</span>
+        </li>
+        <li>
+          <span class="roster-name">Dr. Eltepu</span>
+          <span class="roster-org">Johnson &amp; Johnson</span>
+        </li>
+        <li>
+          <span class="roster-name">Dr. Peddi</span>
+          <span class="roster-org">GlaxoSmithKline</span>
+        </li>
+      </ul>
+    </section>
   </div>
 
-  <!-- Path into the research. Single quiet link. -->
   <p class="findings-link">
-    See <a href="{{ '/findings/' | relative_url }}">Our Findings</a>
+    <a href="{{ '/findings/' | relative_url }}">Our Findings</a>
   </p>
 </section>
