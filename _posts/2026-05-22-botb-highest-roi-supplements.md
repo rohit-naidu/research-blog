@@ -32,7 +32,7 @@ It is designed to make the weight loss **cleaner**:
 
 ---
 
-## 1. HMB
+## HMB
 
 ### The Most Underrated Anti-Catabolic Tool
 
@@ -102,7 +102,7 @@ A 2022 meta-analysis specifically examined **HMB-enriched nutritional supplement
 
 ---
 
-## 2. Creatine Monohydrate
+## Creatine Monohydrate
 
 ### The Training-Signal Preserver
 
@@ -134,7 +134,7 @@ That water effect is not bad. It may actually be useful. A patient may see the s
 
 ---
 
-## 3. Protein Powder
+## Protein Powder
 
 ### Still Foundational, Just Not Always Feasible
 
@@ -163,7 +163,7 @@ If baseline lean-mass loss is around **25% of total weight lost**, then a patien
 
 ---
 
-## 4. Psyllium Husk
+## Psyllium Husk
 
 ### The Constipation Circuit Breaker
 
@@ -213,7 +213,7 @@ A reasonable clinical estimate:
 
 ---
 
-## 5. Magnesium Oxide / Magnesium Citrate
+## Magnesium Oxide / Magnesium Citrate
 
 ### The Stool-Water Lever
 
@@ -254,7 +254,7 @@ Magnesium is best thought of as a targeted tool, not a universal daily supplemen
 
 ---
 
-## 6. Ginger Extract
+## Ginger Extract
 
 ### The Nausea Tool With Real but Indirect Evidence
 
@@ -292,7 +292,7 @@ A conservative extrapolated estimate: ginger may reduce nausea severity/frequenc
 
 ---
 
-## 7. Electrolytes / Oral Rehydration Solution
+## Electrolytes / Oral Rehydration Solution
 
 ### The Dehydration and Fatigue Backstop
 
@@ -341,7 +341,7 @@ Their job is to reduce the probability that nausea/vomiting/diarrhea turns into:
 
 ---
 
-## 8. Peppermint Oil + Caraway Oil
+## Peppermint Oil + Caraway Oil
 
 ### The Bloating / Dyspepsia / Upper-GI Pressure Tool
 
@@ -389,7 +389,7 @@ For functional dyspepsia, published analyses suggest meaningful short-term sympt
 
 ---
 
-## 9. Fiber + Fluids vs Diarrhea
+## Fiber + Fluids vs Diarrhea
 
 ### The Forgotten Opposite Problem
 
@@ -418,7 +418,7 @@ No supplement has strong GLP-1-specific diarrhea prevention data. But hydration 
 
 ---
 
-## 10. Vitamin D
+## Vitamin D
 
 ### Deficiency Correction, Not Magic
 
@@ -452,7 +452,7 @@ The best framing is:
 
 ---
 
-## 11. Omega-3 Fatty Acids
+## Omega-3 Fatty Acids
 
 ### Cardiometabolic Support, Not Core Side-Effect Mitigation
 
@@ -523,31 +523,31 @@ These are **not guarantees**. They are practical expectation ranges based on dir
 
 ### Tier 1: Essentials
 
-#### 1. HMB
+#### HMB
 
 Best for patients who cannot eat enough protein.
 **Protocol:** 3 g/day split into 1 g three times daily.
 **Why:** anti-catabolic signal with tiny ingestion burden.
 
-#### 2. Creatine
+#### Creatine
 
 Best for preserving training output and strength.
 **Protocol:** 3–5 g/day.
 **Why:** keeps the mechanical muscle-retention signal alive.
 
-#### 3. Protein Powder
+#### Protein Powder
 
 Best for hitting the amino-acid floor.
 **Protocol:** 25–40 g protein per shake, 1–2× daily as needed.
 **Why:** substrate still matters.
 
-#### 4. Psyllium
+#### Psyllium
 
 Best for constipation prevention/control.
 **Protocol:** start 3–5 g/day, titrate toward 8–10+ g/day with water.
 **Why:** prevents the constipation → reflux → nausea loop.
 
-#### 5. Electrolytes / ORS
+#### Electrolytes / ORS
 
 Best for vomiting, diarrhea, low intake, dizziness, fatigue.
 **Protocol:** sip during GI symptom windows.

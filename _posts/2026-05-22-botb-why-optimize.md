@@ -165,7 +165,7 @@ Optimization is not one thing.
 
 It is a layered system.
 
-### 1. Dose Optimization
+### Dose Optimization
 
 Most side effects emerge during initiation and escalation. GLP-1 labels and clinical trial protocols use gradual titration because the gut and central nausea pathways need time to adapt. Wegovy's label specifically highlights GI adverse reactions and discontinuations from nausea, vomiting, and diarrhea, supporting the practical importance of dose pacing.[^1]
 
@@ -177,7 +177,7 @@ For some patients, the highest ROI intervention is not a supplement or medicatio
 
 It is staying at the current dose longer.
 
-### 2. Meal Architecture
+### Meal Architecture
 
 GLP-1s delay gastric emptying and increase satiety. That means meal size, fat load, timing, and food texture matter more than usual.
 
@@ -197,7 +197,7 @@ It is:
 
 This turns "I can't eat" into "I can eat strategically."
 
-### 3. Lean Mass Protection
+### Lean Mass Protection
 
 The goal is not just weight loss.
 
@@ -218,7 +218,7 @@ Think of this as the "muscle preservation layer."
 The GLP-1 creates the caloric deficit.
 The protocol tells the body what to preserve.
 
-### 4. GI Side Effect Control
+### GI Side Effect Control
 
 Nausea, constipation, reflux, vomiting, and diarrhea are not one problem.
 
@@ -241,7 +241,7 @@ Muscle loss is not treated the same way as vomiting.
 
 Optimization means matching the intervention to the mechanism.
 
-### 5. Risk Screening
+### Risk Screening
 
 Not every patient is the same.
 

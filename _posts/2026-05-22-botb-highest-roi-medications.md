@@ -56,7 +56,7 @@ The goal is:
 
 ## The BOTB Medication Stack
 
-### 1. Dose Holding / Dose Reduction
+### Dose Holding / Dose Reduction
 
 #### Best for: almost every major side effect
 
@@ -102,7 +102,7 @@ There is no clean RCT saying "dose holding reduces nausea by X%" because this is
 
 ---
 
-### 2. Ondansetron
+### Ondansetron
 
 #### Best for: nausea/vomiting rescue
 
@@ -141,7 +141,7 @@ Ondansetron can worsen constipation, which is already a common GLP-1 side effect
 
 ---
 
-### 3. Polyethylene Glycol / PEG 3350
+### Polyethylene Glycol / PEG 3350
 
 #### Best for: constipation baseline control
 
@@ -187,7 +187,7 @@ Practical expectation:
 
 ---
 
-### 4. Senna / Bisacodyl / Sodium Picosulfate
+### Senna / Bisacodyl / Sodium Picosulfate
 
 #### Best for: constipation rescue when transit is too slow
 
@@ -235,7 +235,7 @@ No direct GLP-1 RCT tells us exact reduction in constipation rate. But constipat
 
 ---
 
-### 5. Linaclotide / Plecanatide / Prucalopride
+### Linaclotide / Plecanatide / Prucalopride
 
 #### Best for: refractory constipation
 
@@ -282,7 +282,7 @@ In constipation guidelines, these are not fringe therapies; they are strongly re
 
 ---
 
-### 6. Famotidine / H2 Blockers
+### Famotidine / H2 Blockers
 
 #### Best for: mild reflux, injection-week heartburn, nighttime acid symptoms
 
@@ -312,7 +312,7 @@ Guidelines recognize H2 blockers as GERD therapies, but PPIs are generally more 
 
 ---
 
-### 7. Proton Pump Inhibitors
+### Proton Pump Inhibitors
 
 #### Best for: persistent GERD, erosive symptoms, significant reflux/dyspepsia
 
@@ -349,7 +349,7 @@ If the core problem is food sitting in the stomach from delayed emptying, a PPI 
 
 ---
 
-### 8. Metoclopramide
+### Metoclopramide
 
 #### Best for: severe nausea with suspected gastric-emptying/motility bottleneck
 
@@ -377,7 +377,7 @@ Metoclopramide has a boxed warning for tardive dyskinesia, a serious movement di
 
 ---
 
-### 9. Loperamide
+### Loperamide
 
 #### Best for: acute watery diarrhea
 
@@ -409,7 +409,7 @@ If diarrhea is infectious, bloody, febrile, severe, or associated with significa
 
 ---
 
-### 10. Bismuth Subsalicylate
+### Bismuth Subsalicylate
 
 #### Best for: mild diarrhea, nausea-adjacent dyspepsia, travel/food-triggered GI upset
 
@@ -443,7 +443,7 @@ Avoid/caution with:
 
 ---
 
-### 11. Ursodiol
+### Ursodiol
 
 #### Best for: gallstone prevention in rapid weight loss / high-risk patients
 
@@ -531,7 +531,7 @@ Sources: Wegovy/Zepbound labels, AGA/ACG constipation guideline, ACG GERD and ga
 
 ### Tier 0: The Master Lever
 
-#### 1. Dose hold / slower escalation / dose reduction
+#### Dose hold / slower escalation / dose reduction
 
 **Best for:** nausea, vomiting, constipation, reflux, under-eating, fatigue
 **Why:** most side effects are exposure-sensitive, especially during escalation.[^3]
@@ -540,22 +540,22 @@ Sources: Wegovy/Zepbound labels, AGA/ACG constipation guideline, ACG GERD and ga
 
 ### Tier 1: Highest ROI Medications
 
-#### 2. PEG 3350
+#### PEG 3350
 
 **Best for:** constipation baseline control
 **Why:** strongly recommended by AGA/ACG constipation guideline.[^6]
 
-#### 3. Ondansetron
+#### Ondansetron
 
 **Best for:** nausea/vomiting rescue
 **Why:** strong antiemetic class, especially useful when nausea threatens hydration/intake; watch constipation/QT.[^4]
 
-#### 4. Famotidine or PPI
+#### Famotidine or PPI
 
 **Best for:** acid reflux/GERD/dyspepsia phenotype
 **Why:** acid suppression can preserve sleep, meals, and adherence; PPIs are stronger for GERD/esophagitis.[^8]
 
-#### 5. Loperamide
+#### Loperamide
 
 **Best for:** acute uncomplicated watery diarrhea
 **Why:** effective motility suppression when diarrhea is non-bloody/non-febrile.[^11]
@@ -564,27 +564,27 @@ Sources: Wegovy/Zepbound labels, AGA/ACG constipation guideline, ACG GERD and ga
 
 ### Tier 2: High ROI in Specific Phenotypes
 
-#### 6. Senna / bisacodyl / sodium picosulfate
+#### Senna / bisacodyl / sodium picosulfate
 
 **Best for:** constipation rescue when stool is not moving
 **Why:** transit support when osmotic agents are not enough.[^6]
 
-#### 7. Linaclotide / plecanatide / prucalopride
+#### Linaclotide / plecanatide / prucalopride
 
 **Best for:** refractory constipation
 **Why:** strongly guideline-supported after OTC failure.[^7]
 
-#### 8. Metoclopramide
+#### Metoclopramide
 
 **Best for:** severe motility-driven nausea/gastroparesis-like symptoms
 **Why:** antiemetic + prokinetic, but boxed-warning risk limits casual use.[^15]
 
-#### 9. Ursodiol
+#### Ursodiol
 
 **Best for:** high-risk rapid weight loss with gallstone concern
 **Why:** rapid-weight-loss/bariatric evidence; GLP-1-specific use is extrapolated.[^13]
 
-#### 10. Bismuth subsalicylate
+#### Bismuth subsalicylate
 
 **Best for:** mild diarrhea/dyspepsia GI upset
 **Why:** useful GI multitool; not as targeted as loperamide or acid suppression.[^12]
