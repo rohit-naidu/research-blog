@@ -35,6 +35,7 @@ permalink: /articles/:title/
 # Files and folders Jekyll should ignore while building.
 # These are development-only files, not pages users should visit.
 exclude:
+  - scripts
   - Gemfile
   - Gemfile.lock
   - README.md
