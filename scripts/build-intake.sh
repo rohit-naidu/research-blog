@@ -27,4 +27,25 @@ else
 fi
 
 touch "$OUT/.nojekyll"
+
+# GitHub Pages runs Jekyll, which excludes underscore-prefixed folders (e.g. _next).
+# Rename assets so CSS/JS are published alongside index.html.
+if [[ -d "$OUT/_next" ]]; then
+  mv "$OUT/_next" "$OUT/next-static"
+  while IFS= read -r -d '' file; do
+    sed -i '' 's|/intake/_next/|/intake/next-static/|g' "$file"
+    sed -i '' 's|/_next/|/next-static/|g' "$file"
+  done < <(find "$OUT" -type f \( -name '*.html' -o -name '*.js' -o -name '*.txt' \) -print0)
+fi
+
+# Drop Next internal RSC payloads and underscore 404 bundle (not needed on static host).
+rm -rf "$OUT/_not-found" 2>/dev/null || true
+find "$OUT" -type d -name '__next.*' -prune -o -type f -name '__next*.txt' -delete 2>/dev/null || true
+find "$OUT" -type f -name 'index.txt' -delete 2>/dev/null || true
+
+if [[ ! -d "$OUT/next-static" ]]; then
+  echo "ERROR: intake/next-static missing after build." >&2
+  exit 1
+fi
+
 echo "Intake static files written to $OUT"
