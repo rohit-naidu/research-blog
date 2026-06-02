@@ -185,7 +185,7 @@ p {
 
 /*
   Card style used to box the authors section so the two bios sit clearly
-  together. The top mission line and bottom findings link render plainly
+  together. The mission line and findings link above it render plainly
   to keep the page airy.
 */
 .card {
@@ -362,6 +362,69 @@ p {
   font-variant: small-caps;
   letter-spacing: 0.06em;
   margin: 2rem 0 1rem;
+}
+
+/*
+  Homepage: findings link sits first so visitors see it without scrolling.
+  Larger type and a bordered pill read as the primary action on the page.
+*/
+.homepage-intro > .findings-link {
+  font-size: 1.2rem;
+  font-variant: normal;
+  letter-spacing: 0.02em;
+  margin: 0 0 1.75rem;
+}
+
+.homepage-intro > .findings-link a {
+  border: 2px solid var(--ink);
+  color: var(--ink);
+  display: inline-block;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 0.65rem 1.5rem;
+  text-decoration: none;
+}
+
+.homepage-intro > .findings-link a:hover,
+.homepage-intro > .findings-link a:focus {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+/*
+  Homepage fits in one viewport: trim vertical gaps so the footer is visible
+  without a small scroll on typical laptop/desktop screens.
+*/
+.page-home .page {
+  padding-bottom: 1.25rem;
+}
+
+.page-home .page-content {
+  padding-top: 1.35rem;
+}
+
+.page-home .site-footer {
+  margin-top: 1.25rem;
+}
+
+.page-home .homepage-intro > .findings-link {
+  margin-bottom: 1.15rem;
+}
+
+.page-home .homepage-intro > .findings-link a {
+  padding: 0.5rem 1.25rem;
+}
+
+.page-home .card {
+  margin-bottom: 0;
+  margin-top: 1.1rem;
+  padding: 1.1rem 1.35rem;
+}
+
+.page-home .roster-block + .roster-block {
+  margin-top: 1.1rem;
+  padding-top: 1rem;
 }
 
 .findings-link a {
