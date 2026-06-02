@@ -36,6 +36,20 @@ if [[ -d "$OUT/_next" ]]; then
     sed -i '' 's|/intake/_next/|/intake/next-static/|g' "$file"
     sed -i '' 's|/_next/|/next-static/|g' "$file"
   done < <(find "$OUT" -type f \( -name '*.html' -o -name '*.js' -o -name '*.txt' \) -print0)
+
+  # Jekyll also drops individual files whose names start with _.
+  build_id_dir="$(find "$OUT/next-static/static" -maxdepth 1 -mindepth 1 -type d ! -name chunks ! -name media | head -1)"
+  if [[ -n "$build_id_dir" ]]; then
+    for manifest in _buildManifest.js _clientMiddlewareManifest.js _ssgManifest.js; do
+      if [[ -f "$build_id_dir/$manifest" ]]; then
+        renamed="${manifest#_}"
+        mv "$build_id_dir/$manifest" "$build_id_dir/$renamed"
+        while IFS= read -r -d '' file; do
+          sed -i '' "s|${manifest}|${renamed}|g" "$file"
+        done < <(find "$OUT" -type f \( -name '*.html' -o -name '*.js' \) -print0)
+      fi
+    done
+  fi
 fi
 
 # Drop Next internal RSC payloads and underscore 404 bundle (not needed on static host).
